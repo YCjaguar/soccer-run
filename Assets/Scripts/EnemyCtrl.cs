@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemCtrl : MonoBehaviour
+public class EnemyCtrl : MonoBehaviour
 {
     public float speed = 3.0f;
     public GameObject skills;
@@ -21,11 +21,11 @@ public class ItemCtrl : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")){
-            gameObject.SetActive(false);
-            skills.GetComponent<SkillManager>().skillNum++;
-            skills.GetComponent<SkillManager>().skillChange = true;
-            // originalButton.gameObject.SetActive(false);
-            // newButton.gameObject.SetActive(true);
+            // gameObject.SetActive(false);
+            // skills.GetComponent<SkillManager>().skillNum++;
+            // skills.GetComponent<SkillManager>().skillChange = true;
+            // // originalButton.gameObject.SetActive(false);
+            // // newButton.gameObject.SetActive(true);
         }
     }
 }
