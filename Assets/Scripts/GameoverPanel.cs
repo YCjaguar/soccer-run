@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameoverPanel : MonoBehaviour
 {
+    public static GameoverPanel instance;
     public TextMeshProUGUI Text_GameResult; //������ ����� ǥ������ Text UI
     private GameObject score;
 
@@ -39,11 +40,9 @@ public class GameoverPanel : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ShowGameOver()
     {
-        if (score.GetComponent<Score>().elapsedTime > 3.0f)
-        {
-            gameObject.SetActive(true);
-        }
+       gameObject.SetActive(true);
+        
     }
 }

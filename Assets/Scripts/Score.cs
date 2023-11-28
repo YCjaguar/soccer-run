@@ -5,6 +5,7 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+    public static Score Instance { get; private set; }
     public TextMeshProUGUI scoreText; // Unity Scene�� ǥ���� �ؽ�Ʈ UI(Text)�� ����Ű�� ����
     public float elapsedTime; //��� �ð��� ������ ����
 
