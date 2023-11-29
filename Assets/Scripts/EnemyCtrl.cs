@@ -9,10 +9,11 @@ public class EnemyCtrl : MonoBehaviour
     public GameObject skills;
     // public Button originalButton;
     // public Button newButton;
-    
+
     void Start()
     {
         skills = GameObject.Find("Skills");
+        
     }
     void Update()
     {
@@ -21,11 +22,20 @@ public class EnemyCtrl : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")){
+
+            GameOver();
             // gameObject.SetActive(false);
             // skills.GetComponent<SkillManager>().skillNum++;
             // skills.GetComponent<SkillManager>().skillChange = true;
             // // originalButton.gameObject.SetActive(false);
             // // newButton.gameObject.SetActive(true);
         }
+    }
+    public void GameOver()
+    {
+        //Debug.Log("GameOver");
+        GameManager.Instance.GameOver();
+      
+
     }
 }

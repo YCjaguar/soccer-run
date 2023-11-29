@@ -7,23 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class GameoverPanel : MonoBehaviour
 {
-    public static GameoverPanel instance;
-    public TextMeshProUGUI Text_GameResult; 
-    private GameObject score;
+    //public static GameoverPanel instance;
+    //public TextMeshProUGUI Text_GameResult;
+    public GameObject gameOverText;
 
     private void Awake()
     {
         
-        transform.gameObject.SetActive(false); 
+        gameObject.SetActive(false); 
         
 
     }
 
-    public void Show()
+    public void ShowPanel()
     {
-        float score = FindObjectOfType<Score>().GetScore(); 
-        transform.gameObject.SetActive(true); 
-        Text_GameResult.text = "GameScore : " + score.ToString(); 
+        Debug.Log("GameOver");
+        //float score = FindObjectOfType<Score>().GetScore(); 
+        gameObject.SetActive(true); 
+        //Text_GameResult.text = "GameScore : " + score.ToString(); 
                                                                      
     
     }
@@ -36,13 +37,7 @@ public class GameoverPanel : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-        score = GameObject.Find("Score");
-    }
-
-    // Update is called once per frame
-    public void ShowGameOver()
-    {
-       transform.gameObject.SetActive(true);
         
     }
+
 }
