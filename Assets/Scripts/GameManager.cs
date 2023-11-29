@@ -12,4 +12,9 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
+    
+    public void GameOver()
+    {
+        Debug.Log("À¸¾Ç");
+    }
 }

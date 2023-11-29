@@ -8,30 +8,30 @@ using UnityEngine.SceneManagement;
 public class GameoverPanel : MonoBehaviour
 {
     public static GameoverPanel instance;
-    public TextMeshProUGUI Text_GameResult; //������ ����� ǥ������ Text UI
+    public TextMeshProUGUI Text_GameResult; 
     private GameObject score;
 
     private void Awake()
     {
         
-            transform.gameObject.SetActive(false); // ������ ���۵Ǹ� GameOver �˾� â�� ������ �ʵ��� �Ѵ�.
+        transform.gameObject.SetActive(false); 
         
 
     }
 
     public void Show()
     {
-        float score = FindObjectOfType<Score>().GetScore(); // ScoreText�� ���� ���� ��ϵ� ������ �ҷ��´�.
-        transform.gameObject.SetActive(true); // GameOver �˾� â�� ȭ�鿡 ǥ�� ��Ŵ
-        Text_GameResult.text = "GameScore : " + score.ToString(); // �˾��� ���� â�� ���� ������ ǥ���Ѵ�.
-                                                                      // \n �̶�� ���ڴ�! '�ٹٲ�' ��! GameSet�̶�� ���� ������ ���� ����
+        float score = FindObjectOfType<Score>().GetScore(); 
+        transform.gameObject.SetActive(true); 
+        Text_GameResult.text = "GameScore : " + score.ToString(); 
+                                                                     
     
     }
     
-    public void OnClick_Retry() // '�絵��' ��ư�� Ŭ���ϸ� ȣ�� �Ǿ��� �Լ�
+    public void OnClick_Retry() 
     {
-        SceneManager.LoadScene("GameScene"); // SceneManager�� LoadScene �Լ��� ����Ͽ�! ���� �� 'GameScene'�� �ٽ� �ҷ������� ��Ų��.
-                                             // ���� ���� �ٽ� �ҷ����� ������ ����� �ȴ�.
+        SceneManager.LoadScene("GameScene"); 
+                                             
     }
         // Start is called before the first frame update
         void Start()
@@ -42,7 +42,7 @@ public class GameoverPanel : MonoBehaviour
     // Update is called once per frame
     public void ShowGameOver()
     {
-       gameObject.SetActive(true);
+       transform.gameObject.SetActive(true);
         
     }
 }

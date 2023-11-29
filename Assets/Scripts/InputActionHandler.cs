@@ -42,4 +42,13 @@ public class InputActionHandler : MonoBehaviour
     {
         characterAnimator.SetTrigger("IsExit");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Enemy")
+        {
+            // Enemy 와 충돌했을 때 GameOver 화면을 활성화
+            GameManager.instance.GameOver();
+        }
+    }
 }
