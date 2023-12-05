@@ -1235,6 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5093ad31c0093ea4ba67d516efdb812a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1 &992453587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1634,7 @@ GameObject:
   - component: {fileID: 1482084608}
   - component: {fileID: 1482084607}
   - component: {fileID: 1482084606}
+  - component: {fileID: 1482084609}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -1741,6 +1743,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482084604}
   m_CullTransparentMesh: 1
+--- !u!114 &1482084609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482084604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4023d4e5fc0556c46a90233a101995c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSize: 100
+  Player: {fileID: 960189894}
 --- !u!1 &1575558243
 GameObject:
   m_ObjectHideFlags: 0

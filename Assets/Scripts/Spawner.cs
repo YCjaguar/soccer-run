@@ -27,8 +27,8 @@ public class Spawner : MonoBehaviour
         GameObject item = GameManager.instance.pool.Get(UnityEngine.Random.Range(0,1));
         item.transform.position += spawnPoint[UnityEngine.Random.Range(1, spawnPoint.Length)].position;
 
-        GameObject enemy = GameManager.instance.pool.Get(UnityEngine.Random.Range(1,2));
-        enemy.transform.position += spawnPoint[UnityEngine.Random.Range(1, spawnPoint.Length)].position;
+        // GameObject enemy = GameManager.instance.pool.Get(UnityEngine.Random.Range(1,2));
+        // enemy.transform.position += spawnPoint[UnityEngine.Random.Range(1, spawnPoint.Length)].position;
         
     }
 }

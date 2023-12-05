@@ -1,10 +1,46 @@
 // using System.Collections;
 // using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.EventSystems;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-// public class JoystickCtrl : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
-// {
+public class JoystickCtrl : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+{
+    private static Vector2 DefaultPos;
+
+    public float horizontalSize;
+
+    public GameObject Player;
+    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
+    {
+        DefaultPos = this.transform.position;
+    }
+    void IDragHandler.OnDrag(PointerEventData eventData)
+    {
+        Vector2 currentPos = eventData.position;
+        if (horizontalSize < (currentPos.x - DefaultPos.x))
+        {
+            this.transform.position = new Vector3(DefaultPos.x + horizontalSize, DefaultPos.y);
+            Player.GetComponent<PlayerCtrl>().posX += 0.001f*(horizontalSize);
+        }
+        else if (horizontalSize < (DefaultPos.x - currentPos.x))
+        {
+            this.transform.position = new Vector3(DefaultPos.x-horizontalSize,DefaultPos.y);
+            Player.GetComponent<PlayerCtrl>().posX += 0.001f*(-horizontalSize);
+        }
+        else 
+        {
+            this.transform.position = new Vector3(currentPos.x,DefaultPos.y);
+            Player.GetComponent<PlayerCtrl>().posX += 0.001f*(currentPos.x - DefaultPos.x);
+
+        }
+    }
+
+    void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+    {
+        this.transform.position = new Vector3(DefaultPos.x, DefaultPos.y);
+    }
+    
 //     public VariableJoystick joy;
 //     public float speed;
 
@@ -80,4 +116,4 @@
 
 //         anim.SetFloat("Move", moveVec.sqrMagnitude);
 //     }
-// }
+}

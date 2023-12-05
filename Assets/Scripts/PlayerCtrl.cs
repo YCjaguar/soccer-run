@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    public float posX;
     void Start()
     {
-        
+        posX = 0.0f;
     }
 
     void Update()
     {
-        transform.position = new Vector3(0f, 0f, 0f);
+        transform.position = new Vector3(posX, 0f, 0f);
     }
 }
