@@ -37,7 +37,7 @@ public class LoadingScene : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space)&& progressbar.value >=1f && operation.progress >0.9f)
             {
-                operation.allowSceneActivation = true;  
+                operation.allowSceneActivation = false;  
             }
         }
     }
