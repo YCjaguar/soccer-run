@@ -36,4 +36,9 @@ public class GameManager : MonoBehaviour
         Panel.SetActive(true);
         Text_GameResult.text = "GameScore : " + score.ToString();
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("New Scene");
+    }
 }

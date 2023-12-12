@@ -24,6 +24,7 @@ public class EnemyCtrl : MonoBehaviour
         if (other.CompareTag("Player")){
 
             GameOver();
+            Destroy(other.gameObject);
             // gameObject.SetActive(false);
             // skills.GetComponent<SkillManager>().skillNum++;
             // skills.GetComponent<SkillManager>().skillChange = true;
