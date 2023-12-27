@@ -9,6 +9,7 @@ public class GroundCtrl : MonoBehaviour
 
     private Renderer backgroundRenderer;
     private int currentBackgroundIndex = 0;
+    private int nextBackgroundIndex = 1; // add next background index 
 
     private float transitionTimer = 0.0f;
 
@@ -18,10 +19,10 @@ public class GroundCtrl : MonoBehaviour
 
         backgroundRenderer.material = backgrounds[currentBackgroundIndex];
 
-        StartCoroutine(ChangeBackground());
+//        StartCoroutine(ChangeBackground());
     }
 
-    IEnumerator ChangeBackground()
+    /* IEnumerator ChangeBackground()
     {
         while (true)
         {
@@ -32,16 +33,23 @@ public class GroundCtrl : MonoBehaviour
             backgroundRenderer.material = backgrounds[currentBackgroundIndex];
         
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
     {
         transitionTimer += Time.deltaTime;
 
+        // calculate the time bewteen the current background and the next one
         float t = transitionTimer / changeInterval;
-        backgroundRenderer.material = Material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[(currentBackgroundIndex + 1) % backgrounds.Length], t);
 
+        if(t > 1.0f)
+        {
+            transitionTimer = 0.0f;
+            currentBackgroundIndex = (currentBackgroundIndex + 1)   % backgrounds.Length;
+            nextBackgroundIndex = (nextBackgroundIndex + 1) % backgrounds.Length;
+        }
 
+        backgroundRenderer.material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[nextBackgroundIndex], t);
     }
 }

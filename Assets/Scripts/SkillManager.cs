@@ -8,7 +8,7 @@ public class SkillManager : MonoBehaviour
     public int skillNum;
     public bool skillChange;
 
-    public GameObject skill_1, skill_2, skill_3;
+    public GameObject skill_1, skill_2, skill_3; //, skill_6;
 
     public Sprite vd, rf, mt, jp, pd, ff;
     private Image currentImage;
@@ -20,6 +20,7 @@ public class SkillManager : MonoBehaviour
         skill_1.SetActive(false);
         skill_2.SetActive(false);
         skill_3.SetActive(false);
+        // skill_6.SetActive(false);
     }
     void Update()
     {
@@ -31,20 +32,42 @@ public class SkillManager : MonoBehaviour
             {
                 skill_1.SetActive(true);
                 skill_1.GetComponent<Image>().sprite = ff;
+                skill_1.GetComponent<SkillAction>().coolTime = 0.1f;
                 skill_1.GetComponent<SkillAction>().coolReset = true;
             }
             if (skillNum == 2)
             {
                 skill_2.SetActive(true);
                 skill_2.GetComponent<Image>().sprite = pd;
+                skill_2.GetComponent<SkillAction>().coolTime = 0.1f;
                 skill_2.GetComponent<SkillAction>().coolReset = true;
             }
             if (skillNum == 3)
             {
                 skill_3.SetActive(true);
                 skill_3.GetComponent<Image>().sprite = jp;
+                skill_3.GetComponent<SkillAction>().coolTime = 0.1f;
                 skill_3.GetComponent<SkillAction>().coolReset = true;
             }
+            if (skillNum == 4)
+            {
+                skill_1.GetComponent<Image>().sprite = vd;
+                skill_1.GetComponent<SkillAction>().coolReset = true;
+            }
+            if (skillNum == 5)
+            {
+                skill_2.GetComponent<Image>().sprite = mt;
+                skill_2.GetComponent<SkillAction>().coolReset = true;
+            }
+            if (skillNum == 6)
+            {
+                // skill_3.SetActive(false);
+                // skill_6.SetActive(true);
+                skill_3.GetComponent<Image>().sprite = rf;
+                skill_3.GetComponent<SkillAction>().coolTime = 10.0f;
+                skill_3.GetComponent<SkillAction>().coolReset = true;
+            }
+
 
             
             skillChange = false;
