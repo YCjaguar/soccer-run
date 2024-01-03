@@ -36,18 +36,19 @@ public class GroundCtrl : MonoBehaviour
     {
         while (true)
         {
-            //yield return new WaitForSeconds(changeInterval);
+            // 다음 배경 인덱스 계산
+            int nextBackgroundIndex = currentBackgroundIndex + 1;
 
-            //backgroundRenderer.material = backgrounds[currentBackgroundIndex];
-            backgroundRenderer.material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[currentBackgroundIndex+1], changeInterval);
-            currentBackgroundIndex = currentBackgroundIndex + 1;
-            yield return null;
-
-            if (currentBackgroundIndex == backgrounds.Length - 1 )
+            // 배열의 끝에 도달하면 nextBackgroundIndex를 0으로 설정
+            if (nextBackgroundIndex >= backgrounds.Length)
             {
-                currentBackgroundIndex = -1;
+                nextBackgroundIndex = 0;
             }
-        
+            backgroundRenderer.material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[nextBackgroundIndex], changeInterval);
+
+            yield return new WaitForSeconds(changeInterval);
+
+            currentBackgroundIndex = nextBackgroundIndex;        
         }
     }  
 
@@ -57,6 +58,7 @@ public class GroundCtrl : MonoBehaviour
 
         backgroundRenderer.material.mainTextureOffset = new Vector2(0, Time.realtimeSinceStartup * scrollSpeedY);
 
+        Debug.Log(backgrounds[currentBackgroundIndex]);
         /*
         // keep track the time on each frame
         transitionTimer += Time.deltaTime;
