@@ -1305,10 +1305,10 @@ MonoBehaviour:
   scrollSpeedY: -0.2
   backgrounds:
   - {fileID: 2100000, guid: 32cee2515b450af4b99cc6f7838e1248, type: 2}
-  - {fileID: 2100000, guid: c1cae046fc1890a40bc176b013827536, type: 2}
+  - {fileID: 2100000, guid: 5b2aa725c401a954eb803e3f8a77c47d, type: 2}
   - {fileID: 2100000, guid: ae05a216b935ee6428ef95995dc2e2c8, type: 2}
   - {fileID: 2100000, guid: 91dc380300162fa4bac388696c91e7f3, type: 2}
-  changeInterval: 5
+  changeInterval: 10
 --- !u!1 &944436623
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,25 +32,46 @@ public class GroundCtrl : MonoBehaviour
         StartCoroutine(ChangeBackground());
     }
 
-      IEnumerator ChangeBackground()
+    IEnumerator ChangeBackground()
     {
         while (true)
         {
             // 다음 배경 인덱스 계산
-            int nextBackgroundIndex = currentBackgroundIndex + 1;
+            int nextBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.Length;
 
-            // 배열의 끝에 도달하면 nextBackgroundIndex를 0으로 설정
-            if (nextBackgroundIndex >= backgrounds.Length)
-            {
-                nextBackgroundIndex = 0;
-            }
-            backgroundRenderer.material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[nextBackgroundIndex], changeInterval);
-
+            // 지정된 시간을 기다린 후에 Material 교체
             yield return new WaitForSeconds(changeInterval);
 
-            currentBackgroundIndex = nextBackgroundIndex;        
+            // Material 교체
+            backgroundRenderer.material = backgrounds[nextBackgroundIndex];
+
+            // 현재 배경 인덱스 업데이트
+            currentBackgroundIndex = nextBackgroundIndex;
+
+            // 디버그 로그
+            Debug.Log("Background changed to: " + backgrounds[currentBackgroundIndex].name);
         }
-    }  
+    }
+
+    /*IEnumerator ChangeBackground()
+  {
+      while (true)
+      {
+          // 다음 배경 인덱스 계산
+          int nextBackgroundIndex = currentBackgroundIndex + 1;
+
+          // 배열의 끝에 도달하면 nextBackgroundIndex를 0으로 설정
+          if (nextBackgroundIndex >= backgrounds.Length)
+          {
+              nextBackgroundIndex = 0;
+          }
+          backgroundRenderer.material.Lerp(backgrounds[currentBackgroundIndex], backgrounds[nextBackgroundIndex], changeInterval);
+
+          yield return new WaitForSeconds(changeInterval);
+
+          currentBackgroundIndex = nextBackgroundIndex;        
+      }
+  }  */
 
     // Update is called once per frame
     void Update()
