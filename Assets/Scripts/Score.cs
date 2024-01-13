@@ -5,13 +5,14 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Unity Scene�� ǥ���� �ؽ�Ʈ UI(Text)�� ����Ű�� ����
-    public float elapsedTime; //��� �ð��� ������ ����
+    public static Score Instance { get; private set; }
+    public TextMeshProUGUI scoreText; 
+    public float elapsedTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        elapsedTime = 0f; // ���� �ð� �ʱ�ȭ
+        elapsedTime = 0f; 
         UpdateScoreText();
         // text = GetComponent<Text>();
     }
@@ -19,8 +20,9 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        elapsedTime += Time.deltaTime; // ��� �ð� ����
+        elapsedTime += Time.deltaTime; 
         UpdateScoreText();
+        
     }
     public float GetScore()
     {
@@ -28,7 +30,6 @@ public class Score : MonoBehaviour
     }
     void UpdateScoreText()
     {
-        // ��� �ð��� �ؽ�Ʈ�� ��ȯ�Ͽ� UI�� ǥ��
         scoreText.text = "Score : " + Mathf.Round(elapsedTime).ToString();
     }
 }

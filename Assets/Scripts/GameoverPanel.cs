@@ -7,43 +7,37 @@ using UnityEngine.SceneManagement;
 
 public class GameoverPanel : MonoBehaviour
 {
-    public TextMeshProUGUI Text_GameResult; //������ ����� ǥ������ Text UI
-    private GameObject score;
+    //public static GameoverPanel instance;
+    //public TextMeshProUGUI Text_GameResult;
+    public GameObject gameOverText;
 
     private void Awake()
     {
         
-            transform.gameObject.SetActive(false); // ������ ���۵Ǹ� GameOver �˾� â�� ������ �ʵ��� �Ѵ�.
+        gameObject.SetActive(false); 
         
 
     }
 
-    public void Show()
+    public void ShowPanel()
     {
-        float score = FindObjectOfType<Score>().GetScore(); // ScoreText�� ���� ���� ��ϵ� ������ �ҷ��´�.
-        transform.gameObject.SetActive(true); // GameOver �˾� â�� ȭ�鿡 ǥ�� ��Ŵ
-        Text_GameResult.text = "GameScore : " + score.ToString(); // �˾��� ���� â�� ���� ������ ǥ���Ѵ�.
-                                                                      // \n �̶�� ���ڴ�! '�ٹٲ�' ��! GameSet�̶�� ���� ������ ���� ����
+        Debug.Log("GameOver");
+        //float score = FindObjectOfType<Score>().GetScore(); 
+        gameObject.SetActive(true); 
+        //Text_GameResult.text = "GameScore : " + score.ToString(); 
+                                                                     
     
     }
     
-    public void OnClick_Retry() // '�絵��' ��ư�� Ŭ���ϸ� ȣ�� �Ǿ��� �Լ�
+    public void OnClick_Retry() 
     {
-        SceneManager.LoadScene("GameScene"); // SceneManager�� LoadScene �Լ��� ����Ͽ�! ���� �� 'GameScene'�� �ٽ� �ҷ������� ��Ų��.
-                                             // ���� ���� �ٽ� �ҷ����� ������ ����� �ȴ�.
+        SceneManager.LoadScene("GameScene"); 
+                                             
     }
         // Start is called before the first frame update
         void Start()
     {
-        score = GameObject.Find("Score");
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (score.GetComponent<Score>().elapsedTime > 3.0f)
-        {
-            gameObject.SetActive(true);
-        }
-    }
 }
