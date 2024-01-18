@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,5 +26,10 @@ public class SkillAnim : MonoBehaviour
     {
         animator_player.SetTrigger("isFf"); // Trigger 변경
         animator_ball.SetTrigger("isFf");
+    }
+
+    private void Update()
+    {
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }
