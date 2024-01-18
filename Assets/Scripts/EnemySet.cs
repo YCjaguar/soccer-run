@@ -37,7 +37,7 @@ public class EnemySet : MonoBehaviour
 
     IEnumerator enemyInit(float delayTime, int caseNum)             
     {
-        Debug.Log("Time = "+ Time.time);
+        // Debug.Log("Time = "+ Time.time);
         if (caseNum < 10)
         {
             if (enemyActive[caseNum, 0] != 0)
