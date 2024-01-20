@@ -205,8 +205,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 321275049}
   m_HandleRect: {fileID: 321275048}
   m_Direction: 0
-  m_Value: -0.0000005614272
-  m_Size: 0.4602837
+  m_Value: -0.0000028294444
+  m_Size: 0.81125
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -783,7 +783,6 @@ GameObject:
   - component: {fileID: 315263713}
   - component: {fileID: 315263715}
   - component: {fileID: 315263714}
-  - component: {fileID: 315263716}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -828,12 +827,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 225
-    m_Right: 225
+    m_Left: 0
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 40
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -855,19 +854,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
---- !u!114 &315263716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315263712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c426e93c84ec94d759458dd647f4b9cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollbar: {fileID: 25327802}
 --- !u!1 &321275047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,7 +1910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Content: {fileID: 315263713}
   m_Horizontal: 1
-  m_Vertical: 0
+  m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
