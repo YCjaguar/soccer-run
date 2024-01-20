@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SwipeScreen : MonoBehaviour
 {
-    public Animator anim;
+    public Animator playerAnim;
+    public Animator ballAnim;
     private Vector2 startTouchPosition; 
     private Vector2 endTouchPosition;
 
@@ -31,10 +32,12 @@ public class SwipeScreen : MonoBehaviour
 
     private void LeftMove()
     {
-        anim.SetBool("isLeft", true);
+        playerAnim.SetBool("isLeft", true);
+        ballAnim.SetBool("isLeft", true);
     }
     private void RightMove()
     {
-        anim.SetBool("isLeft", false);
+        playerAnim.SetBool("isLeft", false);
+        ballAnim.SetBool("isLeft", false);
     }
 }

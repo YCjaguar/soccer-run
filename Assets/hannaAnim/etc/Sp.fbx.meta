@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 15eea6014e4d040449a3063ece4e2c8c
+guid: c00ce38f618ef4d66bc7f69659071b2d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|bd1527f5-18ac-4356-aa40-2d1a30cec6b0_Armature
-      takeName: Armature|bd1527f5-18ac-4356-aa40-2d1a30cec6b0_Armature
-      internalID: -6403667830702970683
+      name: Armature|1db50305-fed4-4102-80a7-22ea277b1fa1_Armature
+      takeName: Armature|1db50305-fed4-4102-80a7-22ea277b1fa1_Armature
+      internalID: -5667685396026053441
       firstFrame: 0
-      lastFrame: 29
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -528,13 +528,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: pt 1(Clone)
+    - name: Sp(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: pt 1(Clone)
+      parentName: Sp(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.000000067179435, y: 6.123234e-17, z: 6.1232336e-17, w: 1}
       scale: {x: 1, y: 0.9999999, z: 0.9999999}
@@ -761,7 +761,7 @@ ModelImporter:
     - name: leftUpLeg
       parentName: hips
       position: {x: 0.0000019836425, y: -0.000000059604645, z: 0.10020935}
-      rotation: {x: -4.622913e-24, y: 0.0000000754979, z: 1, w: -6.123234e-17}
+      rotation: {x: 4.622913e-24, y: 0.0000000754979, z: 1, w: 6.123234e-17}
       scale: {x: 1, y: 1, z: 1}
     - name: leftLeg
       parentName: leftUpLeg
@@ -801,27 +801,12 @@ ModelImporter:
         w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Body.001
-      parentName: pt 1(Clone)
+      parentName: Sp(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.000000067179435, y: -0.00000004371139, z: 2.9977388e-15, w: 1}
       scale: {x: 1, y: 0.99999976, z: 0.99999976}
     - name: Body_thumbnail
-      parentName: pt 1(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: -0.000000030908623, z: 0.000000030908623, w: 0.7071068}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Body_thumbnail.001
-      parentName: pt 1(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: -0.000000030908623, z: 0.000000030908623, w: 0.7071068}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Body_thumbnail.002
-      parentName: pt 1(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: -0.000000030908623, z: 0.000000030908623, w: 0.7071068}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Body_thumbnail.003
-      parentName: pt 1(Clone)
+      parentName: Sp(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: -0.000000030908623, z: 0.000000030908623, w: 0.7071068}
       scale: {x: 100, y: 100, z: 100}
